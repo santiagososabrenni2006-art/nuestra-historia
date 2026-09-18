@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4 meses — Abril ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#07111f;
+    color:#f4edf0;
+    font-family:'Cormorant Garamond',serif;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(180,40,70,.08), transparent 25%),
+        radial-gradient(circle at 80% 70%, rgba(120,50,100,.07), transparent 25%);
+    z-index:-2;
+}
+
+.stars{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:#fff;
+    border-radius:50%;
+    opacity:.35;
+    animation:twinkle 4s infinite ease-in-out;
+}
+
+@keyframes twinkle{
+    0%,100%{opacity:.15;transform:scale(.8)}
+    50%{opacity:.8;transform:scale(1.5)}
+}
+
+.heart{
+    position:fixed;
+    color:#b52f4f;
+    font-size:18px;
+    opacity:.35;
+    pointer-events:none;
+    animation:floatHeart linear infinite;
+    z-index:0;
+}
+
+@keyframes floatHeart{
+    from{
+        transform:translateY(110vh) rotate(0deg);
+        opacity:0;
+    }
+    15%{opacity:.35}
+    85%{opacity:.35}
+    to{
+        transform:translateY(-15vh) rotate(20deg);
+        opacity:0;
+    }
+}
+
+section{
+    width:100%;
+    min-height:100vh;
+    padding:100px 25px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+}
+
+.container{
+    width:min(1050px,100%);
+    margin:auto;
+}
+
+h1,h2,h3,p{
+    text-align:center;
+}
+
+h1{
+    font-size:clamp(55px,9vw,105px);
+    font-weight:500;
+    line-height:1;
+}
+
+h2{
+    font-size:clamp(38px,6vw,70px);
+    font-weight:500;
+    margin-bottom:25px;
+}
+
+h3{
+    font-size:28px;
+    font-weight:500;
+}
+
+p{
+    font-size:clamp(20px,2.2vw,26px);
+    line-height:1.65;
+    max-width:800px;
+    margin:0 auto 18px;
+}
+
+.script{
+    font-family:'Parisienne',cursive;
+    color:#d58a9d;
+}
+
+.small{
+    font-size:18px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    opacity:.7;
+}
+
+.divider{
+    width:70px;
+    height:1px;
+    background:#a94762;
+    margin:25px auto 35px;
+}
+
+.reveal{
+    opacity:0;
+    transform:translateY(45px) scale(.98);
+    transition:
+        opacity 1s ease,
+        transform 1s cubic-bezier(.2,.8,.2,1);
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:translateY(0) scale(1);
+}
+
+.hero-date{
+    margin-top:25px;
+    font-size:22px;
+    letter-spacing:5px;
+    color:#dba0ad;
+}
+
+.hero-line{
+    margin-top:35px;
+    font-family:'Parisienne',cursive;
+    font-size:clamp(25px,4vw,42px);
+    color:#d58a9d;
+}
+
+.polaroid-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:35px;
+    margin-top:50px;
+    align-items:start;
+}
+
+.polaroid{
+    background:#f4eee8;
+    padding:12px 12px 25px;
+    box-shadow:0 18px 35px rgba(0,0,0,.35);
+    color:#222;
+    transform:rotate(var(--rotation));
+    transition:
+        transform .7s ease,
+        opacity .8s ease;
+}
+
+.polaroid:hover{
+    transform:rotate(0deg) translateY(-8px) scale(1.03);
+}
+
+.polaroid img{
+    width:100%;
+    display:block;
+    aspect-ratio:4/5;
+    object-fit:cover;
+}
+
+.polaroid-caption{
+    font-family:'Parisienne',cursive;
+    font-size:25px;
+    margin-top:10px;
+    text-align:center;
+}
+
+.polaroid:nth-child(1){--rotation:-3deg}
+.polaroid:nth-child(2){--rotation:2deg}
+.polaroid:nth-child(3){--rotation:-2deg}
+
+.story-text{
+    max-width:850px;
+    margin:auto;
+}
+
+.story-text p{
+    margin-bottom:24px;
+}
+
+.cards{
+    width:min(900px,100%);
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:28px;
+    margin:45px auto 0;
+}
+
+.flip-card{
+    height:190px;
+    perspective:1000px;
+    cursor:pointer;
+}
+
+.flip-inner{
+    width:100%;
+    height:100%;
+    position:relative;
+    transform-style:preserve-3d;
+    transition:transform .8s cubic-bezier(.2,.7,.2,1);
+}
+
+.flip-card.active .flip-inner{
+    transform:rotateY(180deg);
+}
+
+.flip-front,
+.flip-back{
+    position:absolute;
+    inset:0;
+    backface-visibility:hidden;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:25px;
+    text-align:center;
+}
+
+.flip-front{
+    background:linear-gradient(145deg,#8d1e3d,#5d1027);
+    border:1px solid rgba(255,255,255,.12);
+    box-shadow:0 15px 30px rgba(0,0,0,.3);
+}
+
+.flip-front span{
+    font-family:'Parisienne',cursive;
+    font-size:30px;
+}
+
+.flip-back{
+    background:#f0dfe2;
+    color:#401625;
+    transform:rotateY(180deg);
+    font-size:25px;
+    line-height:1.3;
+}
+
+.memory-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    margin-top:45px;
+}
+
+.memory-card{
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:18px;
+    padding:22px;
+    cursor:pointer;
+    transition:.4s ease;
+}
+
+.memory-card:hover{
+    transform:translateY(-7px);
+    background:rgba(255,255,255,.08);
+}
+
+.memory-card h3{
+    color:#d99aaa;
+    margin-bottom:8px;
+}
+
+.memory-card p{
+    font-size:18px;
+    opacity:.75;
+    margin:0;
+}
+
+.memory-image{
+    display:none;
+    margin-top:15px;
+}
+
+.memory-card.open .memory-image{
+    display:block;
+    animation:fadeImage .5s ease;
+}
+
+.memory-image img{
+    width:100%;
+    max-height:280px;
+    object-fit:cover;
+    border-radius:12px;
+}
+
+@keyframes fadeImage{
+    from{opacity:0;transform:scale(.94)}
+    to{opacity:1;transform:scale(1)}
+}
+
+
+/* =========================
+   TORIS
+========================= */
+
+.toris-section{
+    overflow:hidden;
+}
+
+.toris-paws{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    z-index:10;
+}
+
+.paw{
+    position:absolute;
+    color:#c78b9b;
+    opacity:.55;
+    font-size:30px;
+    transform:rotate(var(--r));
+    pointer-events:auto;
+    cursor:pointer;
+    transition:
+        opacity .3s ease,
+        transform .3s ease,
+        filter .3s ease;
+    z-index:11;
+}
+
+.paw:hover{
+    opacity:1;
+    transform:rotate(0deg) scale(1.35);
+    filter:drop-shadow(0 0 10px rgba(220,130,160,.7));
+}
+
+.paw.found{
+    opacity:1;
+    color:#ffb4c5;
+    transform:rotate(0deg) scale(1.2);
+    filter:drop-shadow(0 0 12px rgba(255,150,180,.8));
+}
+
+.paw:nth-child(1){left:7%;top:20%;--r:-20deg}
+.paw:nth-child(2){left:18%;top:70%;--r:15deg}
+.paw:nth-child(3){right:12%;top:25%;--r:12deg}
+.paw:nth-child(4){right:20%;top:72%;--r:-15deg}
+.paw:nth-child(5){left:43%;top:13%;--r:10deg}
+.paw:nth-child(6){right:43%;bottom:12%;--r:-12deg}
+.paw:nth-child(7){left:5%;bottom:18%;--r:20deg}
+
+.toris-gallery{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:18px;
+    margin-top:45px;
+}
+
+.toris-gallery img{
+    width:100%;
+    aspect-ratio:1;
+    object-fit:cover;
+    border-radius:14px;
+    opacity:0;
+    transform:translateY(35px) scale(.92);
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+.toris-gallery img.show{
+    opacity:1;
+    transform:translateY(0) scale(1);
+}
+
+.toris-secret{
+    display:none;
+    max-width:600px;
+    margin:35px auto 0;
+    animation:secretIn .8s ease;
+}
+
+.toris-secret.visible{
+    display:block;
+}
+
+.toris-secret img{
+    width:min(450px,90%);
+    max-height:450px;
+    object-fit:cover;
+    border-radius:20px;
+    box-shadow:0 20px 45px rgba(0,0,0,.4);
+}
+
+.toris-secret p{
+    margin-top:20px;
+    color:#dca1b0;
+    font-family:'Parisienne',cursive;
+    font-size:34px;
+}
+
+@keyframes secretIn{
+    from{
+        opacity:0;
+        transform:translateY(25px) scale(.9);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+.hospital-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+    max-width:800px;
+    margin:45px auto 0;
+}
+
+.hospital-grid img{
+    width:100%;
+    border-radius:16px;
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+}
+
+.album-grid{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:10px;
+    width:min(1100px,100%);
+    margin:45px auto 0;
+}
+
+.album-item{
+    aspect-ratio:1;
+    overflow:hidden;
+    border-radius:8px;
+    cursor:pointer;
+    opacity:0;
+    transform:scale(.8);
+    transition:
+        opacity .5s ease,
+        transform .5s ease;
+}
+
+.album-item.visible{
+    opacity:1;
+    transform:scale(1);
+}
+
+.album-item:hover{
+    transform:scale(1.05);
+}
+
+.album-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.lightbox{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.94);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:9999;
+    padding:30px;
+}
+
+.lightbox.active{
+    display:flex;
+}
+
+.lightbox img{
+    max-width:90vw;
+    max-height:85vh;
+    object-fit:contain;
+    border-radius:8px;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next{
+    position:absolute;
+    color:#fff;
+    cursor:pointer;
+    font-size:42px;
+    user-select:none;
+    z-index:2;
+}
+
+.lightbox-close{
+    right:30px;
+    top:20px;
+}
+
+.lightbox-prev{
+    left:25px;
+}
+
+.lightbox-next{
+    right:25px;
+}
+
+.surprise-box{
+    margin:45px auto 0;
+    width:min(500px,90%);
+    padding:35px;
+    border:1px solid rgba(214,137,157,.35);
+    border-radius:20px;
+    cursor:pointer;
+    background:rgba(120,20,45,.12);
+    transition:.4s ease;
+}
+
+.surprise-box:hover{
+    transform:translateY(-6px);
+    background:rgba(120,20,45,.2);
+}
+
+.surprise-box .emoji{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.envelope{
+    display:none;
+    margin:35px auto 0;
+    max-width:650px;
+    animation:envelopeIn 1s ease;
+}
+
+.envelope.visible{
+    display:block;
+}
+
+.envelope-box{
+    background:#a32949;
+    border-radius:12px;
+    padding:45px 30px;
+    box-shadow:0 25px 50px rgba(0,0,0,.4);
+}
+
+.envelope-box p{
+    color:#fff3f5;
+    font-size:25px;
+}
+
+.handwritten{
+    font-family:'Parisienne',cursive;
+    font-size:42px !important;
+    color:#ffd5df !important;
+    margin-top:30px !important;
+}
+
+@keyframes envelopeIn{
+    from{
+        opacity:0;
+        transform:translateY(40px) scale(.8);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+@media(max-width:1000px){
+
+    .toris-gallery{
+        grid-template-columns:repeat(4,1fr);
+    }
+
+    .album-grid{
+        grid-template-columns:repeat(5,1fr);
+    }
+}
+
+@media(max-width:900px){
+
+    .polaroid-grid{
+        grid-template-columns:1fr;
+        max-width:450px;
+    }
+
+    .memory-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .toris-gallery{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .album-grid{
+        grid-template-columns:repeat(4,1fr);
+    }
+}
+
+@media(max-width:650px){
+
+    section{
+        padding:80px 18px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .memory-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hospital-grid{
+        grid-template-columns:1fr;
+    }
+
+    .toris-gallery{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .album-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .paw{
+        font-size:24px;
+    }
+
+    .lightbox-prev,
+    .lightbox-next{
+        font-size:32px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<div class="heart" style="left:8%;animation-duration:13s;animation-delay:1s;">♥</div>
+<div class="heart" style="left:20%;animation-duration:17s;animation-delay:4s;">♡</div>
+<div class="heart" style="left:37%;animation-duration:14s;animation-delay:2s;">♥</div>
+<div class="heart" style="left:55%;animation-duration:19s;animation-delay:6s;">♡</div>
+<div class="heart" style="left:72%;animation-duration:15s;animation-delay:3s;">♥</div>
+<div class="heart" style="left:88%;animation-duration:18s;animation-delay:7s;">♡</div>
+
+
+<section>
+
+<div class="container reveal">
+
+    <div class="small">19 · 06 · 2026</div>
+
+    <h1>
+        4 meses
+    </h1>
+
+    <div class="hero-line">
+        y una historia que recién empieza.
+    </div>
+
+    <div class="divider"></div>
+
+    <p>
+        Para Abril, mi Colo.
+    </p>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="container">
+
+    <div class="reveal">
+
+        <div class="small">Nuestros primeros momentos</div>
+
+        <h2>
+            Donde empezó todo
+        </h2>
+
+        <div class="divider"></div>
+
+        <p>
+            Algunos recuerdos quizás parecen pequeños,
+            pero para mí terminaron convirtiéndose
+            en partes enormes de nuestra historia.
+        </p>
+
+    </div>
+
+    <div class="polaroid-grid">
+
+        <div class="polaroid reveal">
+            <img src="floresprimermes.jpeg">
+            <div class="polaroid-caption">
+                Nuestro primer mes ♡
+            </div>
+        </div>
+
+        <div class="polaroid reveal">
+            <img src="primermes.jpeg">
+            <div class="polaroid-caption">
+                Un recuerdo más
+            </div>
+        </div>
+
+        <div class="polaroid reveal">
+            <img src="matescosta.jpeg">
+            <div class="polaroid-caption">
+                Mates juntos
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="container reveal">
+
+    <div class="small">Nuestra historia</div>
+
+    <h2>
+        Cuatro meses
+    </h2>
+
+    <div class="divider"></div>
+
+    <div class="story-text">
+
+        <p>
+            Al mismo tiempo que empezábamos a ser novios,
+            llegó Toris a nuestras vidas.
+        </p>
+
+        <p>
+            La adoptamos cuando tenía apenas 40 días
+            y desde entonces, nuestra historia empezó
+            a tener cuatro patitas.
+        </p>
+
+        <p>
+            Fueron cuatro meses de momentos hermosos,
+            de aprender uno del otro, compartir mates,
+            risas, abrazos, charlas y también algunas maldades.
+        </p>
+
+        <p>
+            Cuatro meses en los que fui descubriendo
+            lo lindo que es tenerte a mi lado
+            y construir algo juntos.
+        </p>
+
+        <p>
+            Y ahora que miro todo lo que pasó,
+            me emociona todavía más pensar
+            en todo lo que nos queda por vivir.
+        </p>
+
+        <p class="script">
+            Porque esto recién empieza.
+        </p>
+
+        <p>
+            Ese fue nuestro comienzo. ♡
+        </p>
+
+        <p class="script">
+            Y sí... también hubo muchísimo amor
+            y muchísima caca de Toris. 😂
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="container reveal">
+
+    <div class="small">Abrí las cartitas</div>
+
+    <h2>
+        Algunas cosas que quería decirte
+    </h2>
+
+    <div class="divider"></div>
+
+    <div class="cards">
+
+        <div class="flip-card">
+            <div class="flip-inner">
+
+                <div class="flip-front">
+                    <span>
+                        Abrime ♡
+                    </span>
+                </div>
+
+                <div class="flip-back">
+                    Si me leíste, te ganaste un castigo. 😈
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="flip-card">
+            <div class="flip-inner">
+
+                <div class="flip-front">
+                    <span>
+                        Otra...
+                    </span>
+                </div>
+
+                <div class="flip-back">
+                    Seguro está haciendo caca Toris. 🐱💩
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="flip-card">
+            <div class="flip-inner">
+
+                <div class="flip-front">
+                    <span>
+                        Una más...
+                    </span>
+                </div>
+
+                <div class="flip-back">
+                    ¿Ya aceptaste ser mi novia? ❤️
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="flip-card">
+            <div class="flip-inner">
+
+                <div class="flip-front">
+                    <span>
+                        La última
+                    </span>
+                </div>
+
+                <div class="flip-back">
+                    Sos lo más lindo que tengo. ❤️
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="container reveal">
+
+    <div class="small">Pequeños momentos</div>
+
+    <h2>
+        Si tuviera que elegir un momento favorito...
+    </h2>
+
+    <div class="divider"></div>
+
+    <p>
+        No podría.
+    </p>
+
+    <div class="memory-grid">
+
+        <div class="memory-card">
+
+            <h3>Mate 🧉</h3>
+
+            <p>
+                Porque cualquier lugar es lindo
+                si estamos juntos.
+            </p>
+
+            <div class="memory-image">
+                <img src="matescosta.jpeg">
+            </div>
+
+        </div>
+
+
+        <div class="memory-card">
+
+            <h3>Risas</h3>
+
+            <p>
+                De esas que terminan doliendo
+                de tanto reír.
+            </p>
+
+            <div class="memory-image">
+                <img src="foto (66).jpeg">
+            </div>
+
+        </div>
+
+
+        <div class="memory-card">
+
+            <h3>Abrazo</h3>
+
+            <p>
+                Mi lugar favorito.
+            </p>
+
+            <div class="memory-image">
+                <img src="foto (68).jpeg">
+            </div>
+
+        </div>
+
+
+        <div class="memory-card">
+
+            <h3>Foto graciosa</h3>
+
+            <p>
+                Porque nosotros también
+                sabemos hacer cualquier cosa.
+            </p>
+
+            <div class="memory-image">
+                <img src="foto (80).jpeg">
+            </div>
+
+        </div>
+
+
+        <div class="memory-card">
+
+            <h3>Random</h3>
+
+            <p>
+                Una de esas fotos que simplemente
+                tenía que estar acá.
+            </p>
+
+            <div class="memory-image">
+                <img src="foto (12).jpeg">
+            </div>
+
+        </div>
+
+
+        <div class="memory-card">
+
+            <h3>Toris 🐾</h3>
+
+            <p>
+                Porque claramente ella también
+                es parte de nuestra historia.
+            </p>
+
+            <div class="memory-image">
+                <img src="torisocho.jpeg">
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<section class="toris-section">
+
+<div class="toris-paws">
+
+    <div class="paw">🐾</div>
+    <div class="paw">🐾</div>
+    <div class="paw">🐾</div>
+    <div class="paw">🐾</div>
+    <div class="paw">🐾</div>
+    <div class="paw">🐾</div>
+    <div class="paw">🐾</div>
+
+</div>
+
+<div class="container">
+
+    <div class="reveal">
+
+        <div class="small">La tercera integrante</div>
+
+        <h2>
+            Toris 🐾
+        </h2>
+
+        <div class="divider"></div>
+
+        <p>
+            Llegó siendo diminuta,
+            pero rápidamente se convirtió
+            en una parte enorme de nosotros.
+        </p>
+
+        <p>
+            Y como toda protagonista,
+            tiene sus propias costumbres.
+        </p>
+
+        <p class="script">
+            Especialmente hacer caca.
+        </p>
+
+    </div>
+
+
+    <div class="toris-gallery">
+
+        <img src="torisbebe.jpeg">
+        <img src="toriscasibebe.jpeg">
+        <img src="torisnueva.jpeg">
+        <img src="torisnuevados.jpeg">
+        <img src="torisnuevatres.jpeg">
+        <img src="toriscuatro.jpeg">
+        <img src="toriscinco.jpeg">
+        <img src="torisseis.jpeg">
+        <img src="torissiete.jpeg">
+        <img src="torisocho.jpeg">
+
+    </div>
+
+
+    <div class="toris-secret" id="torisSecret">
+
+        <img src="torisocho.jpeg">
+
+        <p>
+            Encontraste el secreto de Toris. 🐾❤️
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="container reveal">
+
+    <div class="small">Para los días difíciles</div>
+
+    <h2>
+        También estuvimos ahí
+    </h2>
+
+    <div class="divider"></div>
+
+    <p>
+        Porque estar juntos no significa solamente
+        compartir los momentos lindos.
+    </p>
+
+    <p>
+        También significa acompañarnos cuando las cosas
+        no salen como esperábamos.
+    </p>
+
+    <p>
+        Y quiero que sepas que voy a estar siempre para vos.
+    </p>
+
+    <p>
+        En los días buenos, en los días malos
+        y también en esos días que parecen imposibles.
+    </p>
+
+    <p>
+        Porque no quiero estar solamente cuando todo está bien.
+        Quiero estar para vos cuando más me necesites. ♡
+    </p>
+
+
+    <div class="hospital-grid">
+
+        <img class="reveal" src="hospital.jpeg">
+        <img class="reveal" src="hospitaldos.jpeg">
+
+    </div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="container reveal">
+
+    <div class="small">Gracias</div>
+
+    <h2>
+        Por estos cuatro meses
+    </h2>
+
+    <div class="divider"></div>
+
+    <p>
+        Gracias por todo, por hacerme feliz,
+        por contar conmigo, hacerme sentir querido
+        hasta cuando me siento mal.
+    </p>
+
+    <p>
+        Por saber que si necesito algo,
+        voy a contar con vos,
+        por tu compañía y
+        Principalmente por tu paciencia jeje.
+    </p>
+
+    <p class="script">
+        Te amo con toda mi alma,
+        porque el alma nunca muere.
+    </p>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="container">
+
+    <div class="reveal">
+
+        <div class="small">Nuestros recuerdos</div>
+
+        <h2>
+            Todo lo que vivimos
+        </h2>
+
+        <div class="divider"></div>
+
+        <p>
+            78 recuerdos guardados acá,
+            para que nunca se nos olvide todo
+            lo que fuimos construyendo.
+        </p>
+
+    </div>
+
+
+    <div class="album-grid" id="album"></div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="container reveal">
+
+    <div class="small">
+        Y todavía falta algo...
+    </div>
+
+    <h2>
+        Hay una sorpresa para vos
+    </h2>
+
+    <div class="divider"></div>
+
+    <div class="surprise-box" id="surpriseBox">
+
+        <div class="emoji">
+            🎁
+        </div>
+
+        <p>
+            Hay algo que todavía no viste...
+        </p>
+
+        <p class="script">
+            Tocá para descubrirlo.
+        </p>
+
+    </div>
+
+
+    <div class="envelope" id="envelope">
+
+        <div class="envelope-box">
+
+            <p>
+                Hay cosas que simplemente no quería
+                escribir en una pantalla.
+            </p>
+
+            <p>
+                Algunas cosas merecen ser escritas a mano.
+            </p>
+
+            <p>
+                Pero esa parte de la historia no está acá...
+            </p>
+
+            <p>
+                Porque hay algo que quiero darte en persona.
+            </p>
+
+            <p class="handwritten">
+                Tu sorpresa te espera. ❤️
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<div class="lightbox" id="lightbox">
+
+    <div class="lightbox-close" id="lightboxClose">
+        ×
+    </div>
+
+    <div class="lightbox-prev" id="lightboxPrev">
+        ‹
+    </div>
+
+    <img id="lightboxImg">
+
+    <div class="lightbox-next" id="lightboxNext">
+        ›
+    </div>
+
+</div>
+
+
+<script>
+
+const stars = document.querySelector('.stars');
+
+for(let i=0;i<80;i++){
+
+    const star=document.createElement('div');
+
+    star.className='star';
+
+    star.style.left=Math.random()*100+'%';
+    star.style.top=Math.random()*100+'%';
+    star.style.animationDelay=(Math.random()*5)+'s';
+    star.style.animationDuration=(3+Math.random()*5)+'s';
+
+    stars.appendChild(star);
+}
+
+
+const revealObserver = new IntersectionObserver(
+    entries=>{
+        entries.forEach(entry=>{
+            if(entry.isIntersecting){
+                entry.target.classList.add('visible');
+            }
+        });
+    },
+    {
+        threshold:.12
+    }
+);
+
+document.querySelectorAll('.reveal').forEach(el=>{
+    revealObserver.observe(el);
+});
+
+
+document.querySelectorAll('.flip-card').forEach(card=>{
+
+    card.addEventListener('click',()=>{
+        card.classList.toggle('active');
+    });
+
+});
+
+
+document.querySelectorAll('.memory-card').forEach(card=>{
+
+    card.addEventListener('click',()=>{
+        card.classList.toggle('open');
+    });
+
+});
+
+
+const torisImages=document.querySelectorAll('.toris-gallery img');
+
+const torisObserver=new IntersectionObserver(
+    entries=>{
+        entries.forEach(entry=>{
+
+            if(entry.isIntersecting){
+
+                torisImages.forEach((img,index)=>{
+
+                    setTimeout(()=>{
+                        img.classList.add('show');
+                    },index*100);
+
+                });
+
+                torisObserver.disconnect();
+            }
+
+        });
+    },
+    {
+        threshold:.15
+    }
+);
+
+torisObserver.observe(document.querySelector('.toris-gallery'));
+
+
+/* =========================
+   PATITAS DE TORIS
+========================= */
+
+const paws=document.querySelectorAll('.paw');
+
+let pawsFound=0;
+
+paws.forEach(paw=>{
+
+    paw.addEventListener('click',()=>{
+
+        if(paw.classList.contains('found')) return;
+
+        paw.classList.add('found');
+
+        pawsFound++;
+
+        if(pawsFound===6){
+
+            document
+                .getElementById('torisSecret')
+                .classList.add('visible');
+
+        }
+
+    });
+
+});
+
+
+const album=document.getElementById('album');
+
+const excluded=[
+    29,
+    31,
+    37,
+    39,
+    41,
+    42,
+    48,
+    57
+];
+
+const albumImages=[];
+
+for(let i=1;i<=86;i++){
+
+    if(excluded.includes(i)) continue;
+
+    const item=document.createElement('div');
+
+    item.className='album-item';
+
+    const img=document.createElement('img');
+
+    img.src=`foto (${i}).jpeg`;
+    img.alt=`Recuerdo ${i}`;
+    img.loading='lazy';
+
+    item.appendChild(img);
+
+    album.appendChild(item);
+
+    albumImages.push({
+        element:item,
+        src:`foto (${i}).jpeg`
+    });
+
+}
+
+
+const albumObserver=new IntersectionObserver(
+    entries=>{
+        entries.forEach(entry=>{
+
+            if(entry.isIntersecting){
+
+                const items=[...document.querySelectorAll('.album-item')];
+
+                items.forEach((item,index)=>{
+
+                    setTimeout(()=>{
+                        item.classList.add('visible');
+                    },index*25);
+
+                });
+
+                albumObserver.disconnect();
+
+            }
+
+        });
+    },
+    {
+        threshold:.08
+    }
+);
+
+albumObserver.observe(album);
+
+
+const lightbox=document.getElementById('lightbox');
+const lightboxImg=document.getElementById('lightboxImg');
+const closeBtn=document.getElementById('lightboxClose');
+const prevBtn=document.getElementById('lightboxPrev');
+const nextBtn=document.getElementById('lightboxNext');
+
+let currentImage=0;
+
+
+function openLightbox(index){
+
+    currentImage=index;
+
+    lightboxImg.src=albumImages[currentImage].src;
+
+    lightbox.classList.add('active');
+
+    document.body.style.overflow='hidden';
+}
+
+
+function closeLightbox(){
+
+    lightbox.classList.remove('active');
+
+    document.body.style.overflow='';
+
+}
+
+
+function showNext(){
+
+    currentImage++;
+
+    if(currentImage>=albumImages.length){
+        currentImage=0;
+    }
+
+    lightboxImg.src=albumImages[currentImage].src;
+}
+
+
+function showPrev(){
+
+    currentImage--;
+
+    if(currentImage<0){
+        currentImage=albumImages.length-1;
+    }
+
+    lightboxImg.src=albumImages[currentImage].src;
+}
+
+
+albumImages.forEach((photo,index)=>{
+
+    photo.element.addEventListener('click',()=>{
+        openLightbox(index);
+    });
+
+});
+
+
+closeBtn.addEventListener('click',closeLightbox);
+
+nextBtn.addEventListener('click',showNext);
+
+prevBtn.addEventListener('click',showPrev);
+
+
+lightbox.addEventListener('click',e=>{
+
+    if(e.target===lightbox){
+        closeLightbox();
+    }
+
+});
+
+
+document.addEventListener('keydown',e=>{
+
+    if(!lightbox.classList.contains('active')) return;
+
+    if(e.key==='Escape'){
+        closeLightbox();
+    }
+
+    if(e.key==='ArrowRight'){
+        showNext();
+    }
+
+    if(e.key==='ArrowLeft'){
+        showPrev();
+    }
+
+});
+
+
+let touchStartX=0;
+
+lightbox.addEventListener('touchstart',e=>{
+
+    touchStartX=e.changedTouches[0].screenX;
+
+});
+
+
+lightbox.addEventListener('touchend',e=>{
+
+    const touchEndX=e.changedTouches[0].screenX;
+
+    const difference=touchStartX-touchEndX;
+
+    if(Math.abs(difference)<50) return;
+
+    if(difference>0){
+        showNext();
+    }else{
+        showPrev();
+    }
+
+});
+
+
+const surpriseBox=document.getElementById('surpriseBox');
+const envelope=document.getElementById('envelope');
+
+surpriseBox.addEventListener('click',()=>{
+
+    surpriseBox.style.display='none';
+
+    envelope.classList.add('visible');
+
+});
+
+</script>
+
+</body>
+</html>
